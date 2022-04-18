@@ -1,6 +1,9 @@
+
+option(algorithmic_library_build_tests "Build all of algorithmic's own tests." OFF)
+
 cmake_minimum_required(VERSION 3.14)
 
-project(algorithmic-library-cpp VERSION 0.0.0)
+project(algorithmic-library VERSION 0.0.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -17,6 +20,13 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/include/
 )
 
+add_library(algorithmic-library INTERFACE)
+target_include_directories(algorithmic-library INTERFACE ${PROJECT_SOURCE_DIR}/include/)
+
+if (algorithmic_library_build_tests)
+
 enable_testing()
 
 add_subdirectory(test/)
+
+endif()
