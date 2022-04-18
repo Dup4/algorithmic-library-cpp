@@ -33,7 +33,9 @@ jobs:
 
       - name: Build
         run: |
-          make
+          export CC=clang
+          export CXX=clang++
+          make tests
 
       - name: Unit Test
         run: |
@@ -82,7 +84,9 @@ jobs:
 
       - name: Build
         run: |
-          make
+          export CC=clang
+          export CXX=clang++
+          make tests
 
       - name: Benchmark
         run: |
