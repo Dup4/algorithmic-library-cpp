@@ -61,7 +61,7 @@ public:
     }
 
     // check if s[l:r + 1] is a palindrome.
-    bool IsPalindrome(int l, int r) {
+    bool IsPalindrome(int l, int r) const {
         int il = (l + 1) * 2, ir = (r + 1) * 2;
         int mid = (il + ir) / 2;
         int len = (r - l + 2) / 2;
@@ -69,7 +69,7 @@ public:
     }
 
     // get the length of the longest palindrome substring
-    int GetMaxLengthOfPalindromeSubstring() {
+    int GetMaxLengthOfPalindromeSubstring() const {
         int res = 0;
 
         for (int i = 0; i < l; i++) {
@@ -79,7 +79,7 @@ public:
         return res;
     }
 
-    std::vector<int> GetU() {
+    const std::vector<int> &GetU() {
         return u;
     }
 
