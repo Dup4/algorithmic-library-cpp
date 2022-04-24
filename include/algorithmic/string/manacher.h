@@ -1,11 +1,11 @@
-#ifndef ALGORITHMIC_STRING_MANACHER_HPP_
-#define ALGORITHMIC_STRING_MANACHER_HPP_
+#ifndef ALGORITHMIC_STRING_MANACHER_H_
+#define ALGORITHMIC_STRING_MANACHER_H_
 
 #include <string.h>
 #include <string>
 #include <vector>
 
-namespace algorithmic {
+namespace algorithmic::string {
 
 class Manacher {
 public:
@@ -89,6 +89,6 @@ private:
     std::vector<int> u;
 };
 
-}  // namespace algorithmic
+}  // namespace algorithmic::string
 
-#endif  // ALGORITHMIC_STRING_MANACHER_HPP_
+#endif  // ALGORITHMIC_STRING_MANACHER_H_

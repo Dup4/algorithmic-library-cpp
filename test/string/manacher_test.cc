@@ -6,7 +6,7 @@
 
 #include "algorithmic/string/manacher.h"
 
-using namespace algorithmic;
+using namespace algorithmic::string;
 
 class ManacherTest : public testing::Test {
 protected:

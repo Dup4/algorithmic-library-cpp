@@ -2,7 +2,7 @@
 
 #include "algorithmic/string/manacher.h"
 
-using namespace algorithmic;
+using namespace algorithmic::string;
 
 static void BenchmarkManacher(benchmark::State& state) {
     for (auto _ : state) {
