@@ -9,7 +9,7 @@ namespace algorithmic::string {
 
 class Manacher {
 public:
-    Manacher() = delete;
+    Manacher() {}
 
     Manacher(const int n) {
         fake_s_.reserve(n << 1);
