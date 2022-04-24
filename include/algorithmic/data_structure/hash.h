@@ -30,15 +30,7 @@ public:
         return vec_.size();
     }
 
-    void Add(const T x) {
-        vec_.push_back(x);
-    }
-
     void Add(const T& x) {
-        vec_.push_back(x);
-    }
-
-    void Add(const T&& x) {
         vec_.push_back(x);
     }
 
