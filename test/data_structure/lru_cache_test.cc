@@ -18,6 +18,12 @@ TEST(LRUCacheTest, lru_cache_test) {
     auto lru_cache = LRUCache<int, int>(5);
 
     {
+        lru_cache.Put(1, 1);
+        EXPECT_EQ(lru_cache.Get(1).value(), 1);
+        lru_cache.Clear();
+    }
+
+    {
         EXPECT_FALSE(lru_cache.Get(1).has_value());
 
         for (int i = 1; i <= 5; i++) {
