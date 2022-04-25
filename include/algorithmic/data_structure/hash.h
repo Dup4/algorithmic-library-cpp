@@ -5,7 +5,7 @@
 
 namespace algorithmic::data_structure {
 
-template <typename T>
+template <typename T = int>
 class Hash {
 public:
     Hash() = default;
