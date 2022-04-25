@@ -35,6 +35,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
 
 add_executable(
     unit_test
+    ${PROJECT_SOURCE_DIR}/test/string/kmp_test.cc
     ${PROJECT_SOURCE_DIR}/test/string/manacher_test.cc
     ${PROJECT_SOURCE_DIR}/test/data_structure/hash_test.cc
     ${PROJECT_SOURCE_DIR}/test/data_structure/lru_cache_test.cc
