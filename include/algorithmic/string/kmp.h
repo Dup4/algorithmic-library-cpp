@@ -15,9 +15,9 @@ public:
         next_.reserve(n + 1);
     }
 
-    // `Next[i]` represents the length of the longest
+    // `next_[i]` represents the length of the longest
     // common prefix and suffix of the first i characters
-    void GenNext(const char *s, size_t len) {
+    void GenNext(const char *s, const size_t len) {
         next_.resize(len + 1);
 
         int j;
@@ -39,14 +39,14 @@ public:
         GenNext(s.c_str(), s.length());
     }
 
-    const std::vector<int> &GetNext() {
+    const std::vector<int> &GetNext() const {
         return next_;
     }
 
     // `s` is the match string
     // `t` is the pattern string
     // returns the subscript where `t` appers in `s`
-    std::vector<int> MatchString(const char *s, int len_s, const char *t, int len_t) {
+    std::vector<int> MatchString(const char *s, const int len_s, const char *t, const int len_t) {
         GenNext(t, len_t);
 
         int i = 0, j = 0;
