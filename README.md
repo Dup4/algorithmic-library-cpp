@@ -1,4 +1,6 @@
-# algorithmic-library-cpp
+<img align="right" width="96px" src="./assets/1200px_cpp_logo.svg.png">
+
+# Algorithmic Library For C++
 
 [![Clang Format](https://github.com/Dup4/algorithmic-library-cpp/workflows/Clang%20Format/badge.svg)](https://github.com/Dup4/snapshot-cpp/actions/workflows/clang_format.yml)
 [![Test](https://github.com/Dup4/algorithmic-library-cpp/workflows/Test/badge.svg)](https://github.com/Dup4/snapshot-cpp/actions/workflows/test.yml)
