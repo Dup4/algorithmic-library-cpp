@@ -4,14 +4,21 @@
 // Interval update
 // Single query
 
+#include <vector>
 namespace algorithmic::data_structure::fenwick_tree {
 
-template <typename T, int N>
+template <typename T>
 class FenwickTree {
 public:
+    FenwickTree() = default;
+
+    FenwickTree(const size_t n) {
+        arr_.reserve(n);
+    }
+
     void Init(int n) {
         n_ = n;
-        memset(arr_, 0, sizeof(arr_[0]) * n);
+        arr_.resize(n_ + 1);
     }
 
     void Add(int x, const T& v) {
@@ -29,7 +36,7 @@ public:
         Add(r + 1, -v);
     }
 
-    T Query(int x) {
+    T Query(int x) const {
         T ret = 0;
 
         for (int i = x; i > 0; i -= lowbit(i)) {
@@ -40,12 +47,12 @@ public:
     }
 
 private:
-    int lowbit(int x) {
+    int lowbit(int x) const {
         return x & -x;
     }
 
     int n_;
-    T arr_[N];
+    std::vector<T> arr_;
 };
 
 }  // namespace algorithmic::data_structure::fenwick_tree
