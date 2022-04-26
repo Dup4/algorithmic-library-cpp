@@ -38,6 +38,7 @@ add_executable(
     ${PROJECT_SOURCE_DIR}/test/string/exkmp_test.cc
     ${PROJECT_SOURCE_DIR}/test/string/kmp_test.cc
     ${PROJECT_SOURCE_DIR}/test/string/manacher_test.cc
+    ${PROJECT_SOURCE_DIR}/test/string/sub_sequence_automaton_test.cc
     ${PROJECT_SOURCE_DIR}/test/data_structure/hash_test.cc
     ${PROJECT_SOURCE_DIR}/test/data_structure/lru_cache_test.cc
 )
