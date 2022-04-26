@@ -11,9 +11,9 @@ template <typename T, int N>
 class FenwickTree {
 public:
     void Init(int n) {
-        n_ = n;
-        high_bit_n_ = highBit(n);
-        memset(arr_, 0, sizeof(arr_[0]) * n);
+        n_ = n + 1;
+        high_bit_n_ = highBit(n_);
+        memset(arr_, 0, sizeof(arr_[0]) * n_);
     }
 
     void Add(int x, const T& v) {
@@ -22,7 +22,8 @@ public:
         }
     }
 
-    T Query(int x) {
+    // query prefix sum
+    T Query(int x) const {
         T ret = 0;
 
         for (int i = x; i > 0; i -= lowbit(i)) {
@@ -32,7 +33,7 @@ public:
         return ret;
     }
 
-    T Query(int l, int r) {
+    T Query(int l, int r) const {
         if (l > r) {
             return 0;
         }
@@ -40,11 +41,11 @@ public:
         return Query(r) - Query(l - 1);
     }
 
-    int Kth(const T& k) {
-        int p = 0;
+    T QueryKth(int k) {
+        T p = 0;
 
         for (int lim = 1 << (high_bit_n_); lim; lim >>= 1) {
-            if (p + lim < N && arr_[p + lim] < k) {
+            if (p + lim <= n_ && arr_[p + lim] < k) {
                 p += lim;
                 k -= arr_[p];
             }
@@ -54,11 +55,11 @@ public:
     }
 
 private:
-    int lowbit(int x) {
+    int lowbit(int x) const {
         return x & -x;
     }
 
-    int highBit(int x) {
+    int highBit(int x) const {
         int res = 0;
 
         while (x) {
