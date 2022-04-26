@@ -20,7 +20,7 @@ public:
 
     // 0-index
     void Build(const char *s, size_t len) {
-        this->len = len;
+        this->len = static_cast<int>(len);
         fake_s_.resize((len + 1) << 2);
         u.resize((len + 1) << 2);
 

@@ -20,11 +20,10 @@ public:
     void GenNext(const char *s, const size_t len) {
         next_.resize(len + 1);
 
-        int j;
-        size_t i;
+        int j = 0;
+        size_t i = 0;
 
         j = next_[0] = -1;
-        i = 0;
 
         while (i < len) {
             while (-1 != j && s[i] != s[j]) {
@@ -46,21 +45,21 @@ public:
     // `s` is the match string
     // `t` is the pattern string
     // returns the subscript where `t` appers in `s`
-    std::vector<int> MatchString(const char *s, const int len_s, const char *t, const int len_t) {
+    std::vector<int> MatchString(const char *s, const size_t len_s, const char *t, const size_t len_t) {
         GenNext(t, len_t);
 
         int i = 0, j = 0;
         auto res = std::vector<int>();
 
-        while (i < len_s) {
+        while (i < static_cast<int>(len_s)) {
             while (-1 != j && s[i] != t[j]) {
                 j = next_[j];
             }
 
             ++i, ++j;
 
-            if (j >= len_t) {
-                res.push_back(i - len_t);
+            if (j >= static_cast<int>(len_t)) {
+                res.push_back(static_cast<int>(i - len_t));
                 j = next_[j];
             }
         }

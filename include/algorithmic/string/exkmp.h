@@ -20,18 +20,18 @@ public:
     }
 
     // `next_[i]` represents the LCP length of `s[i:]` and `s`
-    void GenNext(const char *s, const int len_s) {
+    void GenNext(const char *s, const size_t len_s) {
         next_.resize(len_s);
-        int p = 0, pos;
-        next_[0] = len_s;
+        int p = 0, pos = 0;
+        next_[0] = static_cast<int>(len_s);
 
-        while (p + 1 < len_s && s[p] == s[p + 1]) {
+        while (p + 1 < static_cast<int>(len_s) && s[p] == s[p + 1]) {
             ++p;
         }
 
         next_[pos = 1] = p;
 
-        for (int i = 2; i < len_s; ++i) {
+        for (int i = 2; i < static_cast<int>(len_s); ++i) {
             int len = next_[i - pos];
 
             if (len + i < p + 1) {
@@ -43,7 +43,7 @@ public:
                 int j = std::max(p - i + 1, 0);
 
                 // brute force match
-                while (i + j < len_s && s[j + 1] == s[i + j]) {
+                while (i + j < static_cast<int>(len_s) && s[j + 1] == s[i + j]) {
                     ++j;
                 }
 
@@ -61,18 +61,18 @@ public:
     }
 
     // `extend_[i]` represents the LCP length of `t[i:]` and `s`.
-    void GenExtend(const char *s, int len_s, const char *t, int len_t) {
+    void GenExtend(const char *s, const size_t len_s, const char *t, const size_t len_t) {
         GenNext(s, len_s);
         extend_.resize(len_t);
-        int p = 0, pos;
+        int p = 0, pos = 0;
 
-        while (p < len_t && s[p] == t[p]) {
+        while (p < static_cast<int>(len_t) && s[p] == t[p]) {
             ++p;
         }
 
         p = extend_[pos = 0] = p;
 
-        for (int i = 1; i < len_s; ++i) {
+        for (int i = 1; i < static_cast<int>(len_s); ++i) {
             int len = next_[i - pos];
 
             if (len + i < p + 1) {
@@ -80,7 +80,7 @@ public:
             } else {
                 int j = std::max(p - i + 1, 0);
 
-                while (i + j < len_s && j < len_t && t[j + 1] == s[i + j]) {
+                while (i + j < static_cast<int>(len_s) && j < static_cast<int>(len_t) && t[j + 1] == s[i + j]) {
                     ++j;
                 }
 
