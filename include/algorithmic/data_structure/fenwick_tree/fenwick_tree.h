@@ -5,15 +5,22 @@
 // Interval query
 // Find Kth
 
+#include <vector>
 namespace algorithmic::data_structure::fenwick_tree {
 
-template <typename T, int N>
+template <typename T>
 class FenwickTree {
 public:
+    FenwickTree() = default;
+
+    FenwickTree(const size_t n) {
+        arr_.reserve(n);
+    }
+
     void Init(int n) {
-        n_ = n + 1;
+        n_ = n;
         high_bit_n_ = highBit(n_);
-        memset(arr_, 0, sizeof(arr_[0]) * n_);
+        arr_.assign(n_ + 1, 0);
     }
 
     void Add(int x, const T& v) {
@@ -71,7 +78,7 @@ private:
     }
 
     int n_, high_bit_n_;
-    T arr_[N];
+    std::vector<T> arr_;
 };
 
 }  // namespace algorithmic::data_structure::fenwick_tree

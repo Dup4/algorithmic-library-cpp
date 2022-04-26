@@ -16,7 +16,7 @@ protected:
 
 TEST(FenwickTreeTest, fenwick_tree_test) {
     const int N = 1e5;
-    auto fenwick_tree = fenwick_tree::FenwickTree<int, N>();
+    auto fenwick_tree = fenwick_tree::FenwickTree<int>(N);
 
     {
         fenwick_tree.Init(10);
