@@ -18,7 +18,7 @@ public:
 
     void Init(int n) {
         n_ = n;
-        arr_.resize(n_ + 1);
+        arr_.assign(n_ + 1, 0);
     }
 
     void Add(int x, const T& v) {
