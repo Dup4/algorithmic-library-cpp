@@ -39,6 +39,7 @@ add_executable(
     ${PROJECT_SOURCE_DIR}/test/algorithmic/string/kmp_test.cc
     ${PROJECT_SOURCE_DIR}/test/algorithmic/string/manacher_test.cc
     ${PROJECT_SOURCE_DIR}/test/algorithmic/string/sub_sequence_automaton_test.cc
+    ${PROJECT_SOURCE_DIR}/test/algorithmic/misc/string_utility_test.cc
     ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/fenwick_tree/fenwick_tree_test.cc
     ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/fenwick_tree/fenwick_tree1_test.cc
     ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/hash_test.cc
