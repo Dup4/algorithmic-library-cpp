@@ -35,14 +35,14 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
 
 add_executable(
     unit_test
-    ${PROJECT_SOURCE_DIR}/test/string/exkmp_test.cc
-    ${PROJECT_SOURCE_DIR}/test/string/kmp_test.cc
-    ${PROJECT_SOURCE_DIR}/test/string/manacher_test.cc
-    ${PROJECT_SOURCE_DIR}/test/string/sub_sequence_automaton_test.cc
-    ${PROJECT_SOURCE_DIR}/test/data_structure/fenwick_tree/fenwick_tree_test.cc
-    ${PROJECT_SOURCE_DIR}/test/data_structure/fenwick_tree/fenwick_tree1_test.cc
-    ${PROJECT_SOURCE_DIR}/test/data_structure/hash_test.cc
-    ${PROJECT_SOURCE_DIR}/test/data_structure/lru_cache_test.cc
+    ${PROJECT_SOURCE_DIR}/test/algorithmic/string/exkmp_test.cc
+    ${PROJECT_SOURCE_DIR}/test/algorithmic/string/kmp_test.cc
+    ${PROJECT_SOURCE_DIR}/test/algorithmic/string/manacher_test.cc
+    ${PROJECT_SOURCE_DIR}/test/algorithmic/string/sub_sequence_automaton_test.cc
+    ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/fenwick_tree/fenwick_tree_test.cc
+    ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/fenwick_tree/fenwick_tree1_test.cc
+    ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/hash_test.cc
+    ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/lru_cache_test.cc
 )
 
 target_link_libraries(
@@ -64,7 +64,7 @@ DISCOVERY_TIMEOUT  # how long to wait (in seconds) before crashing
 
 add_executable(
     unit_benchmark
-    ${PROJECT_SOURCE_DIR}/test/string/manacher_benchmark.cc
+    ${PROJECT_SOURCE_DIR}/test/algorithmic/string/manacher_benchmark.cc
 )
 
 target_link_libraries(
