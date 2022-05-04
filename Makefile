@@ -20,7 +20,8 @@ run_unittest:
 run_benchmark:
 	./build/bin/unit_benchmark
 
-clean: rm -rf ./build
+clean:
+	rm -rf ./build
 
 clean_test:
 	if [ -d ./build/test ]; then find ./build/test -name "*.gcda" -print0 | xargs -0 rm; fi
