@@ -27,6 +27,7 @@
         "cmake",
         "codecov",
         "discretized",
-        "GCOVR"
+        "GCOVR",
+        "jwlawson"
     ]
 }
