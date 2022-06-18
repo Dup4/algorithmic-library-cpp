@@ -17,6 +17,12 @@
         "--clang-tidy",
         "--pch-storage=memory",
     ],
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            "comment": "#8c8c8c",
+        }
+    },
     "cSpell.words": [
         "cmake",
         "codecov",
