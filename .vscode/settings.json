@@ -28,6 +28,7 @@
         "codecov",
         "discretized",
         "GCOVR",
-        "jwlawson"
+        "jwlawson",
+        "Manacher"
     ]
 }
