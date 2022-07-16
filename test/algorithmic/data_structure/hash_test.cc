@@ -28,13 +28,14 @@ TEST(HashTest, hash_test) {
 
         hs.Gao();
 
-        EXPECT_EQ(hs.GetVec(), vector<int>({
-                                       1,
-                                       2,
-                                       3,
-                                       4,
-                                       5,
-                               }));
+        EXPECT_EQ(hs.GetVec(),
+                  vector<int>({
+                          1,
+                          2,
+                          3,
+                          4,
+                          5,
+                  }));
 
         EXPECT_EQ(hs.Size(), 5);
     }
