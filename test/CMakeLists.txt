@@ -33,17 +33,16 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wextra")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
 
+file(GLOB UNITTEST_FILE
+    "algorithmic/string/*_test.cc"
+    "algorithmic/misc/*_test.cc"
+    "algorithmic/data_structure/*_test.cc"
+    "algorithmic/data_structure/fenwick_tree/*_test.cc"
+)
+
 add_executable(
     unit_test
-    ${PROJECT_SOURCE_DIR}/test/algorithmic/string/exkmp_test.cc
-    ${PROJECT_SOURCE_DIR}/test/algorithmic/string/kmp_test.cc
-    ${PROJECT_SOURCE_DIR}/test/algorithmic/string/manacher_test.cc
-    ${PROJECT_SOURCE_DIR}/test/algorithmic/string/sub_sequence_automaton_test.cc
-    ${PROJECT_SOURCE_DIR}/test/algorithmic/misc/string_utility_test.cc
-    ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/fenwick_tree/fenwick_tree_test.cc
-    ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/fenwick_tree/fenwick_tree1_test.cc
-    ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/hash_test.cc
-    ${PROJECT_SOURCE_DIR}/test/algorithmic/data_structure/lru_cache_test.cc
+    ${UNITTEST_FILE}
 )
 
 target_link_libraries(
@@ -63,9 +62,13 @@ DISCOVERY_TIMEOUT  # how long to wait (in seconds) before crashing
     240
 )
 
+file(GLOB BENCHMARK_FILE
+    "algorithmic/string/*_benchmark.cc"
+)
+
 add_executable(
     unit_benchmark
-    ${PROJECT_SOURCE_DIR}/test/algorithmic/string/manacher_benchmark.cc
+    ${BENCHMARK_FILE}
 )
 
 target_link_libraries(
