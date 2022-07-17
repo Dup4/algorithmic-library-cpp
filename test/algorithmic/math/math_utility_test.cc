@@ -49,3 +49,11 @@ TEST_F(MathUtilityTest, lcm_test) {
         EXPECT_EQ(MathUtility::Lcm<int>({3, 6, 9}), 18);
     }
 }
+
+TEST_F(MathUtilityTest, quick_pow_test) {
+    {
+        for (int i = 0; i < 64; i++) {
+            EXPECT_EQ(MathUtility::QuickPow<int64_t>(2, i), 1ll << i);
+        }
+    }
+}

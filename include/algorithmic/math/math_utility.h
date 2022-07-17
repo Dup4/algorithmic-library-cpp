@@ -44,6 +44,39 @@ public:
 
         return res;
     }
+
+    template <typename T, std::enable_if_t<std::numeric_limits<T>::is_integer, bool> = true>
+    static T QuickPow(T base, T n) {
+        T res = 1;
+
+        while (n) {
+            if (n & 1) {
+                res = res * base;
+            }
+
+            base = base * base;
+            n >>= 1;
+        }
+
+        return res;
+    }
+
+    template <typename T, std::enable_if_t<std::numeric_limits<T>::is_integer, bool> = true>
+    static T QuickPow(T base, T n, T mod) {
+        T res = 1;
+        base = base % mod;
+
+        while (n) {
+            if (n & 1) {
+                res = res * base % mod;
+            }
+
+            base = base * base % mod;
+            n >>= 1;
+        }
+
+        return res;
+    }
 };
 
 }  // namespace algorithmic::math
