@@ -20,6 +20,18 @@ TEST_F(MathUtilityTest, gcd_test) {
         EXPECT_EQ(MathUtility::Gcd(1, 1), 1);
         EXPECT_EQ(MathUtility::Gcd(1, 2), 1);
     }
+
+    {
+        auto f = std::vector<int>({2, 4, 6, 8});
+        EXPECT_EQ(MathUtility::Gcd(f), 2);
+    }
+
+    {
+        EXPECT_EQ(MathUtility::Gcd<int>({1, 2}), 1);
+        EXPECT_EQ(MathUtility::Gcd<int>({}), 0);
+        EXPECT_EQ(MathUtility::Gcd<int>({3, 6, 9}), 3);
+        EXPECT_EQ(MathUtility::Gcd<int>({256, 1024, 512}), 256);
+    }
 }
 
 TEST_F(MathUtilityTest, lcm_test) {

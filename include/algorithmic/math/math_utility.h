@@ -3,6 +3,7 @@
 
 #include <limits>
 #include <type_traits>
+#include <vector>
 
 namespace algorithmic::math {
 
@@ -13,6 +14,17 @@ public:
               std::enable_if_t<std::numeric_limits<A>::is_integer && std::numeric_limits<B>::is_integer, bool> = true>
     static A Gcd(A a, B b) {
         return b ? Gcd(b, a % b) : a;
+    }
+
+    template <typename T, std::enable_if_t<std::numeric_limits<T>::is_integer, bool> = true>
+    static T Gcd(const std::vector<T>& vec) {
+        T res = 0;
+
+        for (const auto& num : vec) {
+            res = Gcd(res, num);
+        }
+
+        return res;
     }
 
     template <typename A,
