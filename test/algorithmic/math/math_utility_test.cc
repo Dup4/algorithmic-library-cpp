@@ -21,3 +21,16 @@ TEST_F(MathUtilityTest, gcd_test) {
         EXPECT_EQ(MathUtility::Gcd(1, 2), 1);
     }
 }
+
+TEST_F(MathUtilityTest, lcm_test) {
+    {
+        EXPECT_EQ(MathUtility::Lcm(1, 1), 1);
+        EXPECT_EQ(MathUtility::Lcm(1, 2), 2);
+        EXPECT_EQ(MathUtility::Lcm(2, 3), 6);
+    }
+
+    {
+        auto res = MathUtility::Lcm(int64_t(998244353), int64_t(1000000007));
+        EXPECT_EQ(res, 998244359987710471);
+    }
+}

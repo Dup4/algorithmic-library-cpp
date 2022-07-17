@@ -14,6 +14,13 @@ public:
     static A Gcd(A a, B b) {
         return b ? Gcd(b, a % b) : a;
     }
+
+    template <typename A,
+              typename B,
+              std::enable_if_t<std::numeric_limits<A>::is_integer && std::numeric_limits<B>::is_integer, bool> = true>
+    static A Lcm(A a, B b) {
+        return a / Gcd(a, b) * b;
+    }
 };
 
 }  // namespace algorithmic::math
