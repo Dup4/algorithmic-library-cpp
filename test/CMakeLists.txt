@@ -38,6 +38,7 @@ file(GLOB UNITTEST_FILE
     "algorithmic/misc/*_test.cc"
     "algorithmic/data_structure/*_test.cc"
     "algorithmic/data_structure/fenwick_tree/*_test.cc"
+    "algorithmic/math/bm/*_test.cc"
 )
 
 add_executable(
