@@ -50,7 +50,7 @@ TEST(BMPrimeTest, bm_prime_test_1) {
             }
         }
 
-        auto g = std::vector<long long>();
+        auto g = std::vector<int64_t>();
 
         for (int i = 1; i <= N; i++) {
             g.push_back(0);
