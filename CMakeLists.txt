@@ -1,5 +1,5 @@
 
-option(algorithmic_library_build_tests "Build all of algorithmic's own tests." OFF)
+option(ALGORITHMIC_LIBRARY_BUILD_TESTS "Build all of algorithmic's own tests." OFF)
 
 cmake_minimum_required(VERSION 3.14)
 
@@ -23,7 +23,7 @@ include_directories(
 add_library(algorithmic-library INTERFACE)
 target_include_directories(algorithmic-library INTERFACE ${PROJECT_SOURCE_DIR}/include/)
 
-if (algorithmic_library_build_tests)
+if (ALGORITHMIC_LIBRARY_BUILD_TESTS)
 
 enable_testing()
 
