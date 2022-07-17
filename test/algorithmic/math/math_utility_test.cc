@@ -45,4 +45,11 @@ TEST_F(MathUtilityTest, lcm_test) {
         auto res = MathUtility::Lcm(int64_t(998244353), int64_t(1000000007));
         EXPECT_EQ(res, 998244359987710471);
     }
+
+    {
+        EXPECT_EQ(MathUtility::Lcm<int>({}), 1);
+        EXPECT_EQ(MathUtility::Lcm<int>({1, 2}), 2);
+        EXPECT_EQ(MathUtility::Lcm<int>({1, 4}), 4);
+        EXPECT_EQ(MathUtility::Lcm<int>({3, 6, 9}), 18);
+    }
 }

@@ -33,6 +33,17 @@ public:
     static A Lcm(A a, B b) {
         return a / Gcd(a, b) * b;
     }
+
+    template <typename T, std::enable_if_t<std::numeric_limits<T>::is_integer, bool> = true>
+    static T Lcm(const std::vector<T>& vec) {
+        T res = 1;
+
+        for (const auto& num : vec) {
+            res = Lcm(res, num);
+        }
+
+        return res;
+    }
 };
 
 }  // namespace algorithmic::math
