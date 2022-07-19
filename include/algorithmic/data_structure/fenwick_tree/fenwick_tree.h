@@ -24,7 +24,7 @@ public:
     }
 
     void Add(int x, const T& v) {
-        for (int i = x; i <= n_; i += lowbit(i)) {
+        for (int i = x; i <= n_; i += lowBit(i)) {
             arr_[i] += v;
         }
     }
@@ -33,7 +33,7 @@ public:
     T Query(int x) const {
         T ret = 0;
 
-        for (int i = x; i > 0; i -= lowbit(i)) {
+        for (int i = x; i > 0; i -= lowBit(i)) {
             ret += arr_[i];
         }
 
@@ -62,7 +62,7 @@ public:
     }
 
 private:
-    int lowbit(int x) const {
+    int lowBit(int x) const {
         return x & -x;
     }
 
