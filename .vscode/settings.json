@@ -27,6 +27,7 @@
         "cmake",
         "codecov",
         "discretized",
+        "fenwick",
         "GCOVR",
         "jwlawson",
         "Manacher"
