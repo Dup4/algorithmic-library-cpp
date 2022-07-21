@@ -1,9 +1,13 @@
 #include "gtest/gtest.h"
+#include "snapshot/snapshot.h"
 
 #include <iostream>
 #include <limits>
 
+#include "algorithmic/string/string_utility.h"
+
 using namespace std;
+using namespace algorithmic::string;
 
 class StringUtilityTest : public testing::Test {
 public:
@@ -28,17 +32,9 @@ public:
     int z;
 };
 
-namespace std {
-
-string to_string(const CustomToString1& c) {
+string ToString(const CustomToString1& c) {
     return to_string(c.x) + " " + to_string(c.y) + " " + to_string(c.z) + "\n";
 }
-
-}  // namespace std
-
-#include "algorithmic/string/string_utility.h"
-
-using namespace algorithmic::misc;
 
 TEST_F(StringUtilityTest, to_string) {
     EXPECT_EQ(StringUtility::ToString(numeric_limits<int>::min()), std::string("-2147483648"));

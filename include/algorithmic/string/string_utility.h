@@ -5,33 +5,43 @@
 #include <string>
 #include <vector>
 
-namespace algorithmic::misc {
+#include "../types_check/has_class_internal_to_string.h"
+#include "../types_check/has_global_to_string.h"
+#include "../types_check/has_operator_stream.h"
+#include "../types_check/has_std_to_string.h"
+
+namespace algorithmic::string {
+
+namespace internal {
+
+template <typename T, std::enable_if_t<types_check::has_global_to_string_v<T>, bool> = true>
+inline std::string VisitGlobalToString(const T& t) {
+    return ToString(t);
+}
+
+}  // namespace internal
 
 class StringUtility {
     friend class StringUtilityTest;
 
 public:
-    template <typename T>
-    class HasStdToString {
-    private:
-        template <typename U>
-        static auto check(int) -> decltype(std::to_string(std::declval<U>()), std::true_type());
-
-        template <typename U>
-        static std::false_type check(...);
-
-    public:
-        enum { value = std::is_same<decltype(check<T>(0)), std::true_type>::value };
-    };
-
-public:
-    template <typename T, std::enable_if_t<HasStdToString<T>::value, bool> = true>
+    template <typename T, std::enable_if_t<types_check::has_std_to_string_v<T>, bool> = true>
     static std::string ToString(const T& t) {
         return std::to_string(t);
     }
 
-    template <typename T, std::enable_if_t<!HasStdToString<T>::value, bool> = true>
+    template <typename T, std::enable_if_t<types_check::has_global_to_string_v<T>, bool> = true>
     static std::string ToString(const T& t) {
+        return internal::VisitGlobalToString(t);
+    }
+
+    template <typename T, std::enable_if_t<types_check::has_class_internal_to_string_v<T>, bool> = true>
+    static std::string ToString(const T& t) {
+        return t.ToString();
+    }
+
+    template <typename T, std::enable_if_t<types_check::has_operator_stream_v<T>, bool> = true>
+    static std::string ToString([[maybe_unused]] const T& t) {
         std::stringstream ss;
         std::string s;
         ss << t;
@@ -90,10 +100,10 @@ public:
 
     static std::vector<std::string> Split(const std::string& s, const char delimiter) {
         std::vector<std::string> res;
-        size_t len = s.length();
+        int len = static_cast<int>(s.length());
 
         std::string t = "";
-        for (size_t i = 0; i <= len; i++) {
+        for (int i = 0; i <= len; i++) {
             if (i == len || s[i] == delimiter) {
                 res.push_back(t);
                 t = "";
@@ -154,6 +164,6 @@ private:
     }
 };
 
-}  // namespace algorithmic::misc
+}  // namespace algorithmic::string
 
 #endif  // ALGORITHMIC_STRING_STRING_UTILITY_H
