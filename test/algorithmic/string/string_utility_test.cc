@@ -1,7 +1,7 @@
+#include "gtest/gtest.h"
+
 #include <iostream>
 #include <limits>
-
-#include "gtest/gtest.h"
 
 using namespace std;
 
@@ -36,7 +36,7 @@ string to_string(const CustomToString1& c) {
 
 }  // namespace std
 
-#include "algorithmic/misc/string_utility.h"
+#include "algorithmic/string/string_utility.h"
 
 using namespace algorithmic::misc;
 

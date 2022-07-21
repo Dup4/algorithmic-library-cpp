@@ -1,5 +1,5 @@
-#ifndef ALGORITHMIC_MISC_STRING_UTILITY_H
-#define ALGORITHMIC_MISC_STRING_UTILITY_H
+#ifndef ALGORITHMIC_STRING_STRING_UTILITY_H
+#define ALGORITHMIC_STRING_STRING_UTILITY_H
 
 #include <sstream>
 #include <string>
@@ -156,4 +156,4 @@ private:
 
 }  // namespace algorithmic::misc
 
-#endif  // ALGORITHMIC_MISC_STRING_UTILITY_H
+#endif  // ALGORITHMIC_STRING_STRING_UTILITY_H
