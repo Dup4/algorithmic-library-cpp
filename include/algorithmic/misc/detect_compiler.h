@@ -5,12 +5,12 @@
 
 namespace algorithmic::misc {
 
-class Detect {
+class DetectCompiler {
 public:
-    static std::string Run() {
+    static std::string Detect() {
         std::string res = "";
 
-        res += "Compiler Version: " + detect_compiler_version() + "\n";
+        res += "Compiler Version: " + detect_compiler_version();
 
         return res;
     }
