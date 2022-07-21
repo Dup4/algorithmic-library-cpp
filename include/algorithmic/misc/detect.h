@@ -10,13 +10,13 @@ public:
     static std::string Compiler() {
         std::string res = "";
 
-        res += "Compiler Version: " + detect_compiler_version();
+        res += "Compiler Version: " + detect_compiler();
 
         return res;
     }
 
 private:
-    static std::string detect_compiler_version() {
+    static std::string detect_compiler() {
         constexpr auto compiler = []() -> std::string {
 #ifdef __clang__
             return "clang++";
