@@ -5,9 +5,9 @@
 
 namespace algorithmic::misc {
 
-class DetectCompiler {
+class Detect {
 public:
-    static std::string Detect() {
+    static std::string Compiler() {
         std::string res = "";
 
         res += "Compiler Version: " + detect_compiler_version();
@@ -17,7 +17,7 @@ public:
 
 private:
     static std::string detect_compiler_version() {
-        const auto compiler = []() -> std::string {
+        constexpr auto compiler = []() -> std::string {
 #ifdef __clang__
             return "clang++";
 #else
@@ -25,7 +25,7 @@ private:
 #endif
         };
 
-        const auto version = []() -> std::string {
+        constexpr auto version = []() -> std::string {
 #ifdef __clang__
             return std::to_string(__clang_major__) + "." + std::to_string(__clang_minor__) + "." +
                    std::to_string(__clang_patchlevel__);
