@@ -26,6 +26,7 @@ TEST_F(TopologicalSortTest, TopologicalSort) {
         auto t = TopologicalSort();
         t.SetNumVertices(5).AddEdge(0, 1).AddEdge(1, 2).AddEdge(2, 3).AddEdge(3, 4).UpdateTopologicalSort();
         auto res = t.GetTopoLogicalOrder();
+        EXPECT_FALSE(t.HasLoop());
         EXPECT_EQ(res, std::vector<int>({0, 1, 2, 3, 4}));
     }
 }
