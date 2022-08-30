@@ -42,6 +42,10 @@ public:
         clear();
     }
 
+    bool IsExist(const K& key) {
+        return cache.count(key) > 0;
+    }
+
     std::optional<V> Get(const K& key) {
         if (!cache.count(key)) {
             return std::nullopt;
