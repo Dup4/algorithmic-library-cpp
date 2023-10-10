@@ -6,3 +6,9 @@
 [![Test](https://github.com/Dup4/algorithmic-library-cpp/workflows/Test/badge.svg)](https://github.com/Dup4/snapshot-cpp/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/Dup4/algorithmic-library-cpp/branch/main/graph/badge.svg)](https://codecov.io/gh/Dup4/algorithmic-library-cpp)
 [![GitHub release](https://img.shields.io/github/release/Dup4/algorithmic-library-cpp.svg)](https://GitHub.com/Dup4/algorithmic-library-cpp/releases/)
+
+## License
+
+[MIT](./LICENSE) License © 2022 - PRESENT [Dup4][dup4]
+
+[dup4]: https://github.com/Dup4
