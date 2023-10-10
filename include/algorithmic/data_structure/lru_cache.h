@@ -1,5 +1,5 @@
-#ifndef ALGORITHMIC_DATA_STRUCTURE_LRU_CACHE_H_
-#define ALGORITHMIC_DATA_STRUCTURE_LRU_CACHE_H_
+#ifndef ALGORITHMIC_DATA_STRUCTURE_LRU_CACHE_H
+#define ALGORITHMIC_DATA_STRUCTURE_LRU_CACHE_H
 
 #include <cstddef>
 #include <memory>
@@ -136,4 +136,4 @@ private:
 
 }  // namespace algorithmic::data_structure
 
-#endif  // ALGORITHMIC_DATA_STRUCTURE_LRU_CACHE_H_
+#endif  // ALGORITHMIC_DATA_STRUCTURE_LRU_CACHE_H

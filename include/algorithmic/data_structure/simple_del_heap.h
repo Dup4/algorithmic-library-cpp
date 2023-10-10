@@ -1,5 +1,5 @@
-#ifndef ALGORITHMIC_DATA_STRUCTURE_HASH_H_
-#define ALGORITHMIC_DATA_STRUCTURE_HASH_H_
+#ifndef ALGORITHMIC_DATA_STRUCTURE_SIMPLE_DEL_HEAP_H
+#define ALGORITHMIC_DATA_STRUCTURE_SIMPLE_DEL_HEAP_H
 
 #include <queue>
 #include <vector>
@@ -56,4 +56,4 @@ private:
 
 }  // namespace algorithmic::data_structure
 
-#endif  // ALGORITHMIC_DATA_STRUCTURE_HASH_H_
+#endif  // ALGORITHMIC_DATA_STRUCTURE_SIMPLE_DEL_HEAP_H

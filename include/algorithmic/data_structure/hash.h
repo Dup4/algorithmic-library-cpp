@@ -1,5 +1,5 @@
-#ifndef ALGORITHMIC_DATA_STRUCTURE_HASH_H_
-#define ALGORITHMIC_DATA_STRUCTURE_HASH_H_
+#ifndef ALGORITHMIC_DATA_STRUCTURE_HASH_H
+#define ALGORITHMIC_DATA_STRUCTURE_HASH_H
 
 #include <vector>
 
@@ -55,4 +55,4 @@ private:
 
 }  // namespace algorithmic::data_structure
 
-#endif  // ALGORITHMIC_DATA_STRUCTURE_HASH_H_
+#endif  // ALGORITHMIC_DATA_STRUCTURE_HASH_H

@@ -30,6 +30,7 @@
         "fenwick",
         "GCOVR",
         "jwlawson",
-        "Manacher"
+        "Manacher",
+        "NARG"
     ]
 }
