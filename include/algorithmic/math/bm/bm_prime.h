@@ -1,6 +1,8 @@
 #ifndef ALGORITHMIC_MATH_BM_BM_PRIME_H_
 #define ALGORITHMIC_MATH_BM_BM_PRIME_H_
 
+#include <cassert>
+#include <cstdint>
 #include <vector>
 
 namespace algorithmic::math {
